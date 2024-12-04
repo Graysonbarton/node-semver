@@ -141,6 +141,8 @@ A "version" is described by the `v2.0.0` specification found at
 <https://semver.org/>.
 
 A leading `"="` or `"v"` character is stripped off and ignored.
+Support for stripping a leading "v" is kept for compatibility with `v1.0.0` of the SemVer
+specification but should not be used anymore.
 
 ## Ranges
 
@@ -459,7 +461,7 @@ strings that they parse.
   in descending order when passed to `Array.sort()`.
 * `compareBuild(v1, v2)`: The same as `compare` but considers `build` when two versions
   are equal.  Sorts in ascending order if passed to `Array.sort()`.
-* `compareLoose(v1, v2)`: Short for ``compare(v1, v2, { loose: true })`.
+* `compareLoose(v1, v2)`: Short for `compare(v1, v2, { loose: true })`.
 * `diff(v1, v2)`: Returns the difference between two versions by the release type
   (`major`, `premajor`, `minor`, `preminor`, `patch`, `prepatch`, or `prerelease`),
   or null if the versions are the same.
